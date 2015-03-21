@@ -10,17 +10,16 @@ import UIKit
 @IBDesignable
 class BuddiesButton: UIButton {
     
-    private var buttShape: CAShapeLayer!
     
     @IBInspectable
-    var theColor: UIColor = UIColor.redColor(){
+    var theOnColor: UIColor = UIColor.redColor(){
         didSet {
             updateLayerProperties()
         }
     }
     
     @IBInspectable
-    var theOtherColor: UIColor = UIColor.redColor(){
+    var theOffColor: UIColor = UIColor.redColor(){
         didSet {
             updateLayerProperties()
         }
@@ -37,57 +36,48 @@ class BuddiesButton: UIButton {
     }
     
     func updateLayerProperties(){
-        if buttShape != nil{
             if isOn {
-                buttShape.fillColor = theColor.CGColor}
-            else   {
-                buttShape.fillColor = theOtherColor.CGColor
+                self.backgroundColor = theOnColor
+            }else   {
+                self.backgroundColor = theOffColor
             }
-        }
+    
     }
     func circle(inFrame: CGRect) -> CGPath {
         let circle = UIBezierPath(ovalInRect: inFrame)
         return circle.CGPath
     }
     
-    private func buildButton() {
-        if buttShape == nil{
-            buttShape = CAShapeLayer()
-            buttShape.path = circle(CGRectInset(self.bounds, 0, 0))
-            buttShape.bounds = self.bounds
-            buttShape.position = CGPoint(x: CGRectGetWidth(self.bounds)/2, y: CGRectGetHeight(self.bounds)/2)
-            buttShape.fillColor = theColor.CGColor
-            self.layer.addSublayer(buttShape)
-        }
-    }
+
     
     func green(){
         println("on")
-        if buttShape != nil{
-            buttShape.fillColor = theColor.CGColor
-            let starFillColor = CABasicAnimation(keyPath: "fillColor")
-            starFillColor.toValue = theColor.CGColor
-            starFillColor.duration = 0.2
-            buttShape.addAnimation(starFillColor, forKey: nil)
-            buttShape.fillColor = theColor.CGColor
-        }
+        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.layoutIfNeeded()
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 100, options: .CurveEaseOut, animations:{
+                self.backgroundColor = self.theOnColor
+                self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            }, completion: nil)
+
     }
     func red(){
         println("off")
-        if buttShape != nil{
-            buttShape.fillColor = theOtherColor.CGColor
-            let starFillColor = CABasicAnimation(keyPath: "fillColor")
-            starFillColor.toValue = theOtherColor.CGColor
-            starFillColor.duration = 0.2
-            buttShape.addAnimation(starFillColor, forKey: nil)
-            buttShape.fillColor = theOtherColor.CGColor
-        }
+        self.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        self.layoutIfNeeded()
+        UIView.animateWithDuration(0.2, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 50, options: .CurveEaseOut, animations:{
+            self.transform = CGAffineTransformMakeScale(0.9, 0.9)
+            self.backgroundColor = self.theOffColor
+            }, completion: nil)
     }
     
     override func layoutSubviews()
     {
         super.layoutSubviews()
-        buildButton()
+        if self.isOn {
+            green()
+        }else {
+            red()
+        }
         updateLayerProperties()
     }
     

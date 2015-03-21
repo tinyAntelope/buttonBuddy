@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func bigButt(sender: BuddiesButton) {
         sender.isOn = !sender.isOn
+
     }
 
 }
