@@ -14,6 +14,7 @@
 		D2FB2CB61ABDF8BB00CDA532 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2FB2CB51ABDF8BB00CDA532 /* Images.xcassets */; };
 		D2FB2CB91ABDF8BB00CDA532 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FB2CB71ABDF8BB00CDA532 /* LaunchScreen.xib */; };
 		D2FB2CC51ABDF8BB00CDA532 /* buttonBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB2CC41ABDF8BB00CDA532 /* buttonBuddyTests.swift */; };
+		D2FB2CCF1ABDF97600CDA532 /* BuddiesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB2CCE1ABDF97600CDA532 /* BuddiesButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		D2FB2CBE1ABDF8BB00CDA532 /* buttonBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buttonBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FB2CC31ABDF8BB00CDA532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2FB2CC41ABDF8BB00CDA532 /* buttonBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonBuddyTests.swift; sourceTree = "<group>"; };
+		D2FB2CCE1ABDF97600CDA532 /* BuddiesButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				D2FB2CB51ABDF8BB00CDA532 /* Images.xcassets */,
 				D2FB2CB71ABDF8BB00CDA532 /* LaunchScreen.xib */,
 				D2FB2CAD1ABDF8BB00CDA532 /* buttonBuddy.xcdatamodeld */,
+				D2FB2CCE1ABDF97600CDA532 /* BuddiesButton.swift */,
 				D2FB2CA91ABDF8BB00CDA532 /* Supporting Files */,
 			);
 			path = buttonBuddy;
@@ -217,6 +220,7 @@
 			files = (
 				D2FB2CB11ABDF8BB00CDA532 /* ViewController.swift in Sources */,
 				D2FB2CAF1ABDF8BB00CDA532 /* buttonBuddy.xcdatamodeld in Sources */,
+				D2FB2CCF1ABDF97600CDA532 /* BuddiesButton.swift in Sources */,
 				D2FB2CAC1ABDF8BB00CDA532 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
